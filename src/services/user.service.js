@@ -1,4 +1,4 @@
-const userModel = require("../model/user.model");
+const userModel = require("../models/user.model");
 
 class UserService {
     // tao nguoi dung moi
@@ -28,7 +28,7 @@ class UserService {
         });
     }
 
-    
+
 
 }
 

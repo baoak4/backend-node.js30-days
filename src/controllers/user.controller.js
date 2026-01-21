@@ -1,6 +1,6 @@
 const userService = require("../services/user.service");
 
-//event loop - 
+//event loop -
 //let const var - 1 bien (function, cuc bo , toan cuc)
 class UserController {
     // ngam hieu createUser la 1 function
@@ -41,7 +41,6 @@ class UserController {
             res.status(200).json({ message: "User delete successfully", data: user });
         } catch (error) {
             res.status(500).json("Internal Server Error");
-
         }
 
     }
