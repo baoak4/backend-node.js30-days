@@ -1,3 +1,12 @@
 "# backend-node.js30-days"
 
+bcryptjs: thư viện (lib) mã hoá mật khẩu - giải mã
+vd: 123 -> abdasds213123kksda!rksdklfklsd123j12jk3
 
+jsonwebtoken: mã hoá token
+token: accessToken lưu trữ phiên làm việc (time: 1 tiếng, 1 ngày, 1 tuần...)
+
+##...role : spread operator
+
+//user : user tu data monggo
+//userId : user tu token

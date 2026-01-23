@@ -2,8 +2,8 @@ const postModel = require("../models/post.model");
 
 
 class PostService {
-    createPost(newPost) {
-        return postModel.create(newPost);
+    createPost(newPost, userId) {
+        return postModel.create({ ...newPost, user : userId });
     }
 
     getListPostsById() {
@@ -32,6 +32,11 @@ class PostService {
             runValidators: true
 
         });
+    }
+
+    //lay danh sach bai viet cua 1 user
+    getPostsByUserId(userId) {
+        return postModel.find({ user: userId })
     }
 
 }

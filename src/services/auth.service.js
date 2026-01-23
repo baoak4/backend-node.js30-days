@@ -1,5 +1,6 @@
 const userModel = require("../models/user.model");
 const throwError = require("../utils/throwError");
+const { signAccessToken } = require("../utils/jwt")
 const { pick } = require("lodash");
 
 class AuthService {
@@ -13,11 +14,13 @@ class AuthService {
         if (!user) { throwError("Invalud email or password"); }
 
         const isMatch = await user.comparePassword(userData.password);
-        if (!isMatch) { throwError("Password not compare"); }
+        if (!isMatch) { throwError("Password not compare"); }``
+
+        const token = signAccessToken({ userId: user._id, role: user.role });
 
         const safeUser = pick(user, ["_id", "email", "name", "role"]);
 
-        return safeUser;
+        return { user: safeUser, token };
     }
 }
 
