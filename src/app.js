@@ -3,6 +3,7 @@ const express = require('express');
 const userRoutes = require('./routes/user.routes');
 const postRoutes = require('./routes/post.routes');
 const authRoutes = require('./routes/auth.routes');
+const commentRoutes = require('./routes/comment.routes');
 
 // middleware for handling errors
 const errorHandler = require('./middlewares/errorHandler');
@@ -16,6 +17,8 @@ app.use('/api/users', userRoutes);
 app.use('/api/posts', postRoutes);
 
 app.use('/api/auth', authRoutes);
+
+app.use('/api/comments', commentRoutes); // cha
 
 app.use(errorHandler);
 
